@@ -7,6 +7,9 @@ WORKDIR /app
 # Copy the local package files to the container's workspace
 COPY . .
 
+# Initialize Go module
+RUN go mod download
+
 # Build the Go application
 RUN go build -o main .
 
